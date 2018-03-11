@@ -1,6 +1,7 @@
 package com.automationpractice;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -11,14 +12,12 @@ public class Landing {
     private WebDriver webDriver;
 
     public Landing(WebDriver webDriver) {
-        open("http://automationpractice.com/index.php");
         this.webDriver = webDriver;
-
     }
 
     public Landing navigateToLogin() {
 
         $(".login").click();
-        return page(Landing.class);
+        return PageFactory.initElements(webDriver, Landing.class);
     }
 }

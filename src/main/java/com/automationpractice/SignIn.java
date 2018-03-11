@@ -11,8 +11,6 @@ import static com.codeborne.selenide.Selenide.page;
  */
 public class SignIn {
 
-    private final WebDriver webDriver;
-
     @FindBy(id = "email_create")
     private SelenideElement createAccountEmailInput;
 
@@ -28,10 +26,6 @@ public class SignIn {
     @FindBy(id = "SubmitLogin")
     private SelenideElement signInButton;
 
-    public SignIn(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
-
     /**
      * Login with an email and password.
      *
@@ -40,7 +34,7 @@ public class SignIn {
      */
     public SignIn withEmailPassword(String email, String password) {
 
-        signInButton.setValue(email);
+        signInEmailInput.setValue(email);
         signInPasswordInput.setValue(password);
         signInButton.click();
 

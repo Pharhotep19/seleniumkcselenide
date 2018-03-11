@@ -24,6 +24,7 @@ public class BrowserCapabilitiesTest {
         $$(".product-image-container").shouldHaveSize(1);
 
 
+
     }
 
     @Ignore
