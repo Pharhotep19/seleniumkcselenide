@@ -5,6 +5,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BrowserCapabilitiesTest {
@@ -14,12 +16,13 @@ public class BrowserCapabilitiesTest {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setJavascriptEnabled(true);
-        capabilities.setCapability("takesScreenshot", true);
+        capabilities.setCapability("takesScreenshot", false);
         capabilities.setCapability("phantomjs.cli.args", new String[] {"--ignore-ssl-errors=true"});
         WebDriver driver = new org.openqa.selenium.phantomjs.PhantomJSDriver(capabilities);
         WebDriverRunner.setWebDriver(driver);
 
-        open("");
+        baseUrl = "http://automationpractice.com";
+        open("/index.php");
         $("#search_query_top").setValue("t-shirts").submit();
         $$(".product-image-container").shouldHaveSize(1);
 

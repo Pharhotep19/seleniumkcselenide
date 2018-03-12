@@ -3,12 +3,12 @@ package com.automationpractice.selenide;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.impl.Html;
 import org.junit.Test;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.source;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -53,6 +53,15 @@ public class MiscellaneousTest {
         screenshot("homepage");
     }
 
+
+    @Test
+    public void runOnChrome() {
+        System.setProperty("webdriver.chrome.driver", "C:/Users/nickg/Documents/webdrivers/chromedriver.exe");
+        System.setProperty("selenide.browser", "chrome");
+
+        baseUrl = "http://automationpractice.com";
+        open("/index.php");
+    }
 
     @Test
     public void executeSomeJavaScript() {
