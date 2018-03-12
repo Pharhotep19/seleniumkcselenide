@@ -3,6 +3,7 @@ package com.automationpractice.selenide;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.impl.Html;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
@@ -64,6 +65,7 @@ public class MiscellaneousTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        
     }
 
 
