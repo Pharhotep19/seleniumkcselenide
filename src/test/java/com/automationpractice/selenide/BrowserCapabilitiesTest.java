@@ -24,7 +24,9 @@ public class BrowserCapabilitiesTest {
         baseUrl = "http://automationpractice.com";
         open("/index.php");
         $("#search_query_top").setValue("t-shirts").submit();
-        $$(".product-image-container").shouldHaveSize(1);
+        $(".product-image-container")
+                .findAll((".product-image-container"))
+                .shouldHaveSize(0);
 
 
 
