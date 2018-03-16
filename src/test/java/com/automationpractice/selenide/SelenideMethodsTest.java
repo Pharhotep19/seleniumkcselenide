@@ -1,5 +1,6 @@
 package com.automationpractice.selenide;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -7,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideMethodsTest {
 
-
+    @Ignore
     @Test
     public void methodActionsOnElementTest() {
 
@@ -40,7 +41,8 @@ public class SelenideMethodsTest {
         // dragAndDropTo(String)
     }
 
-
+    @Ignore
+    @Test
     public void methodsToGetElementAttributes() {
 
         open("http://automationpractice.com/index.php");
