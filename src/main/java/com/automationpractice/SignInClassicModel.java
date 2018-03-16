@@ -14,13 +14,13 @@ public class SignInClassicModel {
         this.webDriver = webDriver;
     }
 
-    public SignIn withEmailPassword(String email, String password) {
+    public SignInClassicModel withEmailPassword(String email, String password) {
 
         $("#email").setValue(email);
         $("#passwd").setValue(password);
         $("#SubmitLogin").click();
 
-        return PageFactory.initElements(webDriver, SignIn.class);
+        return PageFactory.initElements(webDriver, SignInClassicModel.class);
 
     }
 }

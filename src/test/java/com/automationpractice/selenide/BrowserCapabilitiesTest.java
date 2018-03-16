@@ -16,7 +16,7 @@ public class BrowserCapabilitiesTest {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setJavascriptEnabled(true);
-        capabilities.setCapability("takesScreenshot", false);
+        capabilities.setCapability("takesScreenshot", true);
         capabilities.setCapability("phantomjs.cli.args", new String[] {"--ignore-ssl-errors=true"});
         WebDriver driver = new org.openqa.selenium.phantomjs.PhantomJSDriver(capabilities);
         WebDriverRunner.setWebDriver(driver);
@@ -26,7 +26,7 @@ public class BrowserCapabilitiesTest {
         $("#search_query_top").setValue("t-shirts").submit();
         $(".product-image-container")
                 .findAll((".product-image-container"))
-                .shouldHaveSize(0);
+                .shouldHaveSize(2);
 
 
 

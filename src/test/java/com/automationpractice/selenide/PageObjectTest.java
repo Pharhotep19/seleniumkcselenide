@@ -3,6 +3,7 @@ package com.automationpractice.selenide;
 import com.automationpractice.Landing;
 import com.automationpractice.SignIn;
 import com.automationpractice.SignInClassicModel;
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -25,5 +26,7 @@ public class PageObjectTest {
         signIn.withEmailPassword("demo@seleniumkc.com", "mydemopassword123");
 
         title().equals("My account - My Store");
+
     }
+
 }
